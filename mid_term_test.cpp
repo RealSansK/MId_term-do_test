@@ -14,29 +14,33 @@ bool compareMSSV(string a, string b) {
 }
 
 int main() {
-    string danhsachMSSV[5] = { "", "2301CT1234", "2302CT3456", "2305CT3999", "2304CT0002" };
-
-    cout << "Nhap MSSV: ";
-    cin >> danhsachMSSV[0];
+    string danhsachMSSV[100];
+    int soluong;
+    cout << "Nhap so luong SV: ";
+    cin >> soluong;
+    for (int i = 0; i < soluong; i++) {
+        cout << "Nhap MSSV cho sinh vien thu " << (i + 1) << ": ";
+        cin >> danhsachMSSV[i];
+    }
 
     cout << "Danh sach MSSV ban dau:\n";
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < soluong; i++) {
         cout << danhsachMSSV[i] << ", ";
     }
-    std::cout << std::endl;
-    string sortedMSSV[5];
-    copy(danhsachMSSV, danhsachMSSV + 5, sortedMSSV);
-    sort(sortedMSSV, sortedMSSV + 5, compareMSSV);
+    cout << endl;
+    string sortedMSSV[100];
+    copy(danhsachMSSV, danhsachMSSV + soluong, sortedMSSV);
+    sort(sortedMSSV, sortedMSSV + soluong, compareMSSV);
 
     cout << "Danh sach MSSV sau khi sap xep:\n";
-    for (int i = 0; i < 5; i++) {
-        cout << sortedMSSV[i] << ", ";
+    for (int i = 0; i < soluong; i++) {
+        cout<< sortedMSSV[i] << ", ";
     }
-    std::cout<< std::endl;
+    cout << endl;
     string* ptrArrayMSSV = danhsachMSSV;
     string maxMSSV = *ptrArrayMSSV;
     int index = 0;
-    for (int i = 1; i < 5; i++) {
+    for (int i = 1; i < soluong; i++) {
         if (*(ptrArrayMSSV + i) > maxMSSV) {
             maxMSSV = *(ptrArrayMSSV + i);
             index = i;
