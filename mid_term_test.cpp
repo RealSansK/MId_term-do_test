@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 #include <algorithm>
 
@@ -21,18 +21,18 @@ int main() {
 
     cout << "Danh sach MSSV ban dau:\n";
     for (int i = 0; i < 5; i++) {
-        cout << danhsachMSSV[i] << "\n";
+        cout << danhsachMSSV[i] << ", ";
     }
-
+    std::cout << std::endl;
     string sortedMSSV[5];
     copy(danhsachMSSV, danhsachMSSV + 5, sortedMSSV);
     sort(sortedMSSV, sortedMSSV + 5, compareMSSV);
 
     cout << "Danh sach MSSV sau khi sap xep:\n";
     for (int i = 0; i < 5; i++) {
-        cout << sortedMSSV[i] << "\n";
+        cout << sortedMSSV[i] << ", ";
     }
-
+    std::cout<< std::endl;
     string* ptrArrayMSSV = danhsachMSSV;
     string maxMSSV = *ptrArrayMSSV;
     int index = 0;
